@@ -35,6 +35,7 @@
             <v-card-actions>
               <v-btn
                 outline
+                class="ml-2 mb-1"
                 @click="openNamespace(namespace)">
                 Open
               </v-btn>
@@ -61,6 +62,12 @@ export default {
   },
 
   mounted: async function() {
+    if (this.$store.state.namespaces) {
+      this.namespaces = this.$store.state.namespaces
+      this.isLoading = false
+      return
+    }
+
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
     })
@@ -83,9 +90,7 @@ export default {
 
       console.log(namespace)
       this.$store.commit('currentNamespace', namespace)
-      this.$router.push({
-        path: `/${namespace.id}`
-      })
+      this.$router.push('namespace')
     }
   }
 }
