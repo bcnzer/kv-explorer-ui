@@ -123,8 +123,9 @@ export default {
 
     loadKeyValue: async function(keyIndex) {
       // Someone expanded the panel
+      // TODO - enter your url below
       const response = await fetch(
-        `https://kvexplorerapi.spottersystems.com/v1/key?key=${
+        `https://kvexplorerapi.YOURURL.com/v1/key?key=${
           this.cfKeys.result[keyIndex].name
         }&namespace=${this.$store.state.currentNamespace.id}`
       )
@@ -142,18 +143,15 @@ export default {
         return
       }
 
-      console.log(
-        readCookie('sessionstack-anonymous-49ab2ead474f402db90637b33a5ad4d6')
-      )
-
       this.$nextTick(() => {
         this.$nuxt.$loading.start()
       })
       this.isLoading = true
       this.currentPanel = undefined
 
+      // TODO - enter your url below
       let response = await fetch(
-        `https://kvexplorerapi.spottersystems.com/v1/keys?page=${
+        `https://kvexplorerapi.YOURURL.com/v1/keys?page=${
           this.page
         }&namespace=${this.$store.state.currentNamespace.id}`
       )

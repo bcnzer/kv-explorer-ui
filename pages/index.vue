@@ -74,8 +74,9 @@ export default {
       this.$nuxt.$loading.start()
     })
 
+    // TODO - enter your url below
     let response = await fetch(
-      'https://kvexplorerapi.spottersystems.com/v1/namespaces'
+      'https://kvexplorerapi.YOURURL.com/v1/namespaces'
     )
     this.namespaces = await response.json()
     this.$store.commit('setNamespaces', this.namespaces)
