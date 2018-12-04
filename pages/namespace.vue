@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import readCookie from '../helpers/readCookie.js'
+
 export default {
   data: () => ({
     page: 1,
@@ -140,10 +142,15 @@ export default {
         return
       }
 
+      console.log(
+        readCookie('sessionstack-anonymous-49ab2ead474f402db90637b33a5ad4d6')
+      )
+
       this.$nextTick(() => {
         this.$nuxt.$loading.start()
       })
       this.isLoading = true
+      this.currentPanel = undefined
 
       let response = await fetch(
         `https://kvexplorerapi.spottersystems.com/v1/keys?page=${

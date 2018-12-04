@@ -49,6 +49,8 @@
 
 
 <script>
+import readCookie from '../helpers/readCookie.js'
+
 export default {
   data: () => ({
     namespaces: null,
