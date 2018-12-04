@@ -1,6 +1,9 @@
-# KvExplorer
+# Kv Explorer
 
-> Tool for viewing Cloudflare KV (Key Value) data, for a particular namespace
+> Vue.js SPA for viewing Cloudflare KV (Key Value) data, for a particular namespace. Read-only operations. It requires
+> a worker backend, to access to the Cloudflare API
+
+NOTE: as of this writing this app is not fully complete. It's still a work-in-progress. See issues for work remaining
 
 ## Build Setup
 
