@@ -7,9 +7,6 @@
       xs12
       sm8
       md6>
-      <div class="text-xs-center mt-5 mb-4">
-        <spotter-logo/>
-      </div>
       <h1 class="text-xs-center mb-4">Cannot find page</h1>
       <p class="text-xs-center mb-4">Please enter a valid URL</p>
     </v-flex>
